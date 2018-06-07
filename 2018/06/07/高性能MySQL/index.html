@@ -11,66 +11,66 @@
 <meta name="keywords" content="MySQL,数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《高性能MySQL》笔记（未完待续）">
-<meta property="og:url" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/index.html">
+<meta property="og:url" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/index.html">
 <meta property="og:site_name" content="wxcStar的博客">
 <meta property="og:description" content="一、MySQL架构1. 逻辑架构存储引擎只负责数据的存储和提取。 2. 并发控制读写锁  读锁是共享的，互相不堵塞。 写锁是排他的，会堵塞其他读锁和写锁。  锁粒度  表锁 行级锁  3. 事务ACID：原子性、一致性、隔离性、持久性。隔离级别：未提交读，提交读（不可重复读），可重复读（InnoDB默认），可串行化。脏读：其他事务能读取到未提交事务的数据。不可重复读：一个事务从开始到提交之前，所做">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528164050299.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528165184212.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528164708185.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528165257001.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528165284743.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528165568341.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528166010362.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528166020915.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528166180732.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528166285644.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528166497095.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528166503129.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528166577789.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528166760090.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528166874106.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528166883899.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528166935101.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528166966341.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528167072144.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528167259811.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528167289290.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528167581622.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528167611199.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528167512105.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528167732956.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528168400328.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528182528196.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528182592069.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528183018595.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528183338058.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528183797092.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528183383361.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528183412753.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528184158440.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528183901629.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528184350233.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528184515192.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528184714356.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528184828359.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528184863210.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528185061290.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528185165896.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528185267789.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528185299261.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528185358537.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528185507814.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528185554162.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528185648882.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528186698447.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528186874492.png">
-<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528186942921.png">
-<meta property="og:updated_time" content="2018-06-07T11:59:21.681Z">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528164050299.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528165184212.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528164708185.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528165257001.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528165284743.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528165568341.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528166010362.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528166020915.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528166180732.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528166285644.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528166497095.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528166503129.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528166577789.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528166760090.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528166874106.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528166883899.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528166935101.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528166966341.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528167072144.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528167259811.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528167289290.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528167581622.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528167611199.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528167512105.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528167732956.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528168400328.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528182528196.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528182592069.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528183018595.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528183338058.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528183797092.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528183383361.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528183412753.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528184158440.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528183901629.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528184350233.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528184515192.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528184714356.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528184828359.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528184863210.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528185061290.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528185165896.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528185267789.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528185299261.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528185358537.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528185507814.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528185554162.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528185648882.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528186698447.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528186874492.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528186942921.png">
+<meta property="og:updated_time" content="2018-06-07T12:17:59.476Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《高性能MySQL》笔记（未完待续）">
 <meta name="twitter:description" content="一、MySQL架构1. 逻辑架构存储引擎只负责数据的存储和提取。 2. 并发控制读写锁  读锁是共享的，互相不堵塞。 写锁是排他的，会堵塞其他读锁和写锁。  锁粒度  表锁 行级锁  3. 事务ACID：原子性、一致性、隔离性、持久性。隔离级别：未提交读，提交读（不可重复读），可重复读（InnoDB默认），可串行化。脏读：其他事务能读取到未提交事务的数据。不可重复读：一个事务从开始到提交之前，所做">
-<meta name="twitter:image" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/1528164050299.png">
+<meta name="twitter:image" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/1528164050299.png">
   
     <link rel="alternate" href="/atom.xml" title="wxcStar的博客" type="application/atom+xml">
   
@@ -117,9 +117,9 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-数据库/高性能MySQL" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-高性能MySQL" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/06/07/数据库/高性能MySQL/" class="article-date">
+    <a href="/2018/06/07/高性能MySQL/" class="article-date">
   <time datetime="2018-06-07T11:53:54.294Z" itemprop="datePublished">2018-06-07</time>
 </a>
     
@@ -194,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/" data-id="cji4i3x1100043ayb9muf4g80" class="article-share-link">Share</a>
+      <a data-url="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/" data-id="cji4ib0v400005oyb4pcs8tf7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -266,7 +266,7 @@
       <ul>
         
           <li>
-            <a href="/2018/06/07/数据库/高性能MySQL/">《高性能MySQL》笔记（未完待续）</a>
+            <a href="/2018/06/07/高性能MySQL/">《高性能MySQL》笔记（未完待续）</a>
           </li>
         
           <li>
