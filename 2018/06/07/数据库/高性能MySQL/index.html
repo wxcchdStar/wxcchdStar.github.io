@@ -11,11 +11,11 @@
 <meta name="keywords" content="MySQL,数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《高性能MySQL》笔记（未完待续）">
-<meta property="og:url" content="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/index.html">
+<meta property="og:url" content="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/index.html">
 <meta property="og:site_name" content="wxcStar的博客">
 <meta property="og:description" content="一、MySQL架构1. 逻辑架构存储引擎只负责数据的存储和提取。 2. 并发控制读写锁  读锁是共享的，互相不堵塞。 写锁是排他的，会堵塞其他读锁和写锁。  锁粒度  表锁 行级锁  3. 事务ACID：原子性、一致性、隔离性、持久性。隔离级别：未提交读，提交读（不可重复读），可重复读（InnoDB默认），可串行化。脏读：其他事务能读取到未提交事务的数据。不可重复读：一个事务从开始到提交之前，所做">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://wxcchdstar.github.io/images/高性能MySQL//images/高性能MySQL/1528164050299.png">
+<meta property="og:image" content="https://wxcchdstar.github.io/images/高性能MySQL/1528164050299.png">
 <meta property="og:image" content="https://wxcchdstar.github.io/images/高性能MySQL/1528165184212.png">
 <meta property="og:image" content="https://wxcchdstar.github.io/images/高性能MySQL/1528164708185.png">
 <meta property="og:image" content="https://wxcchdstar.github.io/images/高性能MySQL/1528165257001.png">
@@ -66,11 +66,11 @@
 <meta property="og:image" content="https://wxcchdstar.github.io/images/高性能MySQL/1528186698447.png">
 <meta property="og:image" content="https://wxcchdstar.github.io/images/高性能MySQL/1528186874492.png">
 <meta property="og:image" content="https://wxcchdstar.github.io/images/高性能MySQL/1528186942921.png">
-<meta property="og:updated_time" content="2018-06-07T12:19:56.752Z">
+<meta property="og:updated_time" content="2018-06-07T12:29:36.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《高性能MySQL》笔记（未完待续）">
 <meta name="twitter:description" content="一、MySQL架构1. 逻辑架构存储引擎只负责数据的存储和提取。 2. 并发控制读写锁  读锁是共享的，互相不堵塞。 写锁是排他的，会堵塞其他读锁和写锁。  锁粒度  表锁 行级锁  3. 事务ACID：原子性、一致性、隔离性、持久性。隔离级别：未提交读，提交读（不可重复读），可重复读（InnoDB默认），可串行化。脏读：其他事务能读取到未提交事务的数据。不可重复读：一个事务从开始到提交之前，所做">
-<meta name="twitter:image" content="https://wxcchdstar.github.io/images/高性能MySQL//images/高性能MySQL/1528164050299.png">
+<meta name="twitter:image" content="https://wxcchdstar.github.io/images/高性能MySQL/1528164050299.png">
   
     <link rel="alternate" href="/atom.xml" title="wxcStar的博客" type="application/atom+xml">
   
@@ -117,9 +117,9 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-高性能MySQL" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-数据库/高性能MySQL" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/06/07/高性能MySQL/" class="article-date">
+    <a href="/2018/06/07/数据库/高性能MySQL/" class="article-date">
   <time datetime="2018-06-07T11:53:54.294Z" itemprop="datePublished">2018-06-07</time>
 </a>
     
@@ -143,7 +143,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、MySQL架构"><a href="#一、MySQL架构" class="headerlink" title="一、MySQL架构"></a>一、MySQL架构</h2><h3 id="1-逻辑架构"><a href="#1-逻辑架构" class="headerlink" title="1. 逻辑架构"></a>1. 逻辑架构</h3><p><img src="/images/高性能MySQL//images/高性能MySQL/1528164050299.png" alt=""><br>存储引擎只负责数据的存储和提取。</p>
+        <h2 id="一、MySQL架构"><a href="#一、MySQL架构" class="headerlink" title="一、MySQL架构"></a>一、MySQL架构</h2><h3 id="1-逻辑架构"><a href="#1-逻辑架构" class="headerlink" title="1. 逻辑架构"></a>1. 逻辑架构</h3><p><img src="/images/高性能MySQL/1528164050299.png" alt=""><br>存储引擎只负责数据的存储和提取。</p>
 <h3 id="2-并发控制"><a href="#2-并发控制" class="headerlink" title="2. 并发控制"></a>2. 并发控制</h3><p>读写锁</p>
 <ul>
 <li>读锁是共享的，互相不堵塞。</li>
@@ -194,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://wxcchdstar.github.io/2018/06/07/高性能MySQL/" data-id="cji4ib0v400005oyb4pcs8tf7" class="article-share-link">Share</a>
+      <a data-url="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/" data-id="cji4iipci0000d2yb5v6yzcfa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -266,7 +266,7 @@
       <ul>
         
           <li>
-            <a href="/2018/06/07/高性能MySQL/">《高性能MySQL》笔记（未完待续）</a>
+            <a href="/2018/06/07/数据库/高性能MySQL/">《高性能MySQL》笔记（未完待续）</a>
           </li>
         
           <li>
