@@ -7,18 +7,18 @@
   
   <title>MySQL操作汇总 | wxcStar的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装12Linux: sudo yum install mysqlMac: brew install mysql 启动、停止、查看状态12Linux: sudo service mysqld [start|stop|status]Mac: brew services [start|stop] mysql 生成root临时密码1grep &amp;apos;temporary password&amp;apos;">
-<meta name="keywords" content="MySQL">
+  <meta name="description" content="安装12345Linux:  1. wget  https://repo.mysql.com//mysql57-community-release-el7-11.noarch.rpm 2. yum localinstall mysql57-community-release-el7-11.noarch.rpm  3. yum install mysql-community-serverMac: b">
+<meta name="keywords" content="MySQL,数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL操作汇总">
-<meta property="og:url" content="https://wxcchdstar.github.io/2017/12/21/Mysql操作汇总/index.html">
+<meta property="og:url" content="https://wxcchdstar.github.io/2017/12/21/数据库/Mysql操作汇总/index.html">
 <meta property="og:site_name" content="wxcStar的博客">
-<meta property="og:description" content="安装12Linux: sudo yum install mysqlMac: brew install mysql 启动、停止、查看状态12Linux: sudo service mysqld [start|stop|status]Mac: brew services [start|stop] mysql 生成root临时密码1grep &amp;apos;temporary password&amp;apos;">
+<meta property="og:description" content="安装12345Linux:  1. wget  https://repo.mysql.com//mysql57-community-release-el7-11.noarch.rpm 2. yum localinstall mysql57-community-release-el7-11.noarch.rpm  3. yum install mysql-community-serverMac: b">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-21T03:54:29.000Z">
+<meta property="og:updated_time" content="2018-06-07T11:35:35.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL操作汇总">
-<meta name="twitter:description" content="安装12Linux: sudo yum install mysqlMac: brew install mysql 启动、停止、查看状态12Linux: sudo service mysqld [start|stop|status]Mac: brew services [start|stop] mysql 生成root临时密码1grep &amp;apos;temporary password&amp;apos;">
+<meta name="twitter:description" content="安装12345Linux:  1. wget  https://repo.mysql.com//mysql57-community-release-el7-11.noarch.rpm 2. yum localinstall mysql57-community-release-el7-11.noarch.rpm  3. yum install mysql-community-serverMac: b">
   
     <link rel="alternate" href="/atom.xml" title="wxcStar的博客" type="application/atom+xml">
   
@@ -65,12 +65,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Mysql操作汇总" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-数据库/Mysql操作汇总" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/12/21/Mysql操作汇总/" class="article-date">
+    <a href="/2017/12/21/数据库/Mysql操作汇总/" class="article-date">
   <time datetime="2017-12-21T03:27:46.000Z" itemprop="datePublished">2017-12-21</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/数据库/">数据库</a>►<a class="article-category-link" href="/categories/数据库/MySQL/">MySQL</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -87,7 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Linux: sudo yum install mysql</span><br><span class="line">Mac: brew install mysql</span><br></pre></td></tr></table></figure>
+        <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Linux: </span><br><span class="line"> 1. wget  https://repo.mysql.com//mysql57-community-release-el7-11.noarch.rpm</span><br><span class="line"> 2. yum localinstall mysql57-community-release-el7-11.noarch.rpm </span><br><span class="line"> 3. yum install mysql-community-server</span><br><span class="line">Mac: brew install mysql</span><br></pre></td></tr></table></figure>
 <h3 id="启动、停止、查看状态"><a href="#启动、停止、查看状态" class="headerlink" title="启动、停止、查看状态"></a>启动、停止、查看状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Linux: sudo service mysqld [start|stop|status]</span><br><span class="line">Mac: brew services [start|stop] mysql</span><br></pre></td></tr></table></figure>
 <h3 id="生成root临时密码"><a href="#生成root临时密码" class="headerlink" title="生成root临时密码"></a>生成root临时密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &apos;temporary password&apos; /var/log/mysqld.log</span><br></pre></td></tr></table></figure>
 <h3 id="安全设置"><a href="#安全设置" class="headerlink" title="安全设置"></a>安全设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
@@ -98,15 +102,16 @@
 <h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database [db_name];</span><br></pre></td></tr></table></figure>
 <h3 id="授予某用户的数据库权限"><a href="#授予某用户的数据库权限" class="headerlink" title="授予某用户的数据库权限"></a>授予某用户的数据库权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 授予所有权限</span><br><span class="line">1. grant all privileges on [db_name].* to [www]@&apos;%&apos; identified by &apos;此处是密码&apos;;</span><br><span class="line">// 授予指定权限</span><br><span class="line">2. grant select, insert, delete, update on [db_name].* to [www]@&apos;%&apos; identified by &apos;此处是密码&apos;;</span><br></pre></td></tr></table></figure>
 <h3 id="修改用户密码"><a href="#修改用户密码" class="headerlink" title="修改用户密码"></a>修改用户密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u [user] -p password</span><br></pre></td></tr></table></figure>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Backup</span><br><span class="line">docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE &gt; backup.sql</span><br><span class="line"></span><br><span class="line"># Restore</span><br><span class="line">cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE</span><br></pre></td></tr></table></figure>
 <h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>这里以”[xxx]”表示占位，可将此处替换为需要的数据库名、表明、用户名等等，替换后需要去掉”[]”</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://wxcchdstar.github.io/2017/12/21/Mysql操作汇总/" data-id="cjbfxfvwd0000ldybpr54y778" class="article-share-link">Share</a>
+      <a data-url="https://wxcchdstar.github.io/2017/12/21/数据库/Mysql操作汇总/" data-id="cji4hqpiu0001unyblpk45wj6" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
 
     </footer>
   </div>
@@ -114,11 +119,15 @@
     
 <nav id="article-nav">
   
-  
-    <a href="/2017/12/20/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2018/06/07/数据库/MySQL数据库军规/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MySQL数据库军规
+        
+      </div>
     </a>
+  
   
 </nav>
 
@@ -130,13 +139,20 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a></li></ul></li></ul>
+    </div>
+  </div>
+
 
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
     </div>
   </div>
 
@@ -146,7 +162,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a>
+      <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a>
     </div>
   </div>
 
@@ -155,7 +171,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li></ul>
     </div>
   </div>
 
@@ -168,11 +184,15 @@
       <ul>
         
           <li>
-            <a href="/2017/12/21/Mysql操作汇总/">MySQL操作汇总</a>
+            <a href="/2018/06/07/数据库/高性能MySQL/">《高性能MySQL》笔记（未完待续）</a>
           </li>
         
           <li>
-            <a href="/2017/12/20/hello-world/">Hello World</a>
+            <a href="/2018/06/07/数据库/MySQL数据库军规/">MySQL数据库军规</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/21/数据库/Mysql操作汇总/">MySQL操作汇总</a>
           </li>
         
       </ul>
@@ -187,7 +207,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 wxcStar<br>
+      &copy; 2018 wxcStar<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
