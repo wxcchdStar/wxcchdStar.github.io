@@ -62,6 +62,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-数据库/数据库密码加密" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/08/数据库/数据库密码加密/" class="article-date">
+  <time datetime="2018-06-08T02:10:38.842Z" itemprop="datePublished">2018-06-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/数据库/">数据库</a>►<a class="article-category-link" href="/categories/数据库/MySQL/">MySQL</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/08/数据库/数据库密码加密/">数据库密码加密</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数据库密码应该做到：<strong>即使被拿走了数据和所有的代码，也没办法破解里面的数据。</strong></p>
+<p>正确做法：<strong>加盐 hash 保存密码</strong>。</p>
+<h3 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h3><p><strong>Hash</strong>是指将不定长度的文字编码成等长度的“指纹”，并且无法被反向计算。<br>PS: 此处的<strong>Hash</strong>应该是<strong>加密哈希函数</strong>。<br>PS: MD5已经过时很久了，不要再用了！！！如：<a href="http://www.cmd5.com/" target="_blank" rel="noopener">http://www.cmd5.com/</a></p>
+<h3 id="破解Hash"><a href="#破解Hash" class="headerlink" title="破解Hash"></a>破解Hash</h3><p>目前有此类在线破解hash的网站。如：<a href="https://crackstation.net/" target="_blank" rel="noopener">https://crackstation.net/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 字典攻击</span><br><span class="line">Trying apple : failed</span><br><span class="line">Trying blueberry : failed</span><br><span class="line">Trying justinbeiber : failed</span><br><span class="line">...</span><br><span class="line">Trying letmein : failed</span><br><span class="line">Trying s3cr3t : success!</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 暴力攻击</span><br><span class="line">Trying aaaa : failed</span><br><span class="line">Trying aaab : failed</span><br><span class="line">Trying aaac : failed</span><br><span class="line">...</span><br><span class="line">Trying acdb : failed</span><br><span class="line">Trying acdc : success!</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 查表法</span><br><span class="line">Searching: 5f4dcc3b5aa765d61d8327deb882cf99: FOUND: password5</span><br><span class="line">Searching: 6cbe615c106f422d23669b610b564800: not in database</span><br><span class="line">Searching: 630bf032efe4507f2c57b280995925a9: FOUND: letMEin12</span><br><span class="line">Searching: 386f43fab5d096a7a66d67c8f213e5ec: FOUND: mcd0nalds</span><br><span class="line">Searching: d5ec75d5fe70d428685510fae36492d9: FOUND: p@ssw0rd!</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 反向查表法</span><br><span class="line">Searching for hash(apple) in users&apos; hash list... : Matches [alice3, 0bob0, charles8]</span><br><span class="line">Searching for hash(blueberry) in users&apos; hash list... : Matches [usr10101, timmy, john91]</span><br><span class="line">Searching for hash(letmein) in users&apos; hash list... : Matches [wilson10, dragonslayerX, joe1984]</span><br><span class="line">Searching for hash(s3cr3t) in users&apos; hash list... : Matches [bruce19, knuth1337, john87]</span><br><span class="line">Searching for hash(z@29hjja) in users&apos; hash list... : No users used this password</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 彩虹表</span><br><span class="line">彩虹表是一种在时间和空间的消耗上找寻平衡的破解技术。它和查表法很类似，但是为了使查询表占用的空间更小而牺牲了破解速度。因为它更小，于是我们可以在一定的空间内存储更多的哈希值，从而使攻击更加有效。</span><br></pre></td></tr></table></figure>
+<h3 id="加盐"><a href="#加盐" class="headerlink" title="加盐"></a>加盐</h3><p>加盐可以让查表法和彩虹表都失去作用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hash(&quot;hello&quot;) = 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824</span><br><span class="line">hash(&quot;hello&quot; + &quot;QxLUF1bgIAdeQX&quot;) = 9e209040c863f84a31e719795b2577523954739fe5ed3b58a75cff2127075ed1</span><br><span class="line">hash(&quot;hello&quot; + &quot;bv5PehSMfV11Cd&quot;) = d1d3ec2e6f20fd420d50e2642992841d8338a314b8ea157c9e18477aaef226ab</span><br><span class="line">hash(&quot;hello&quot; + &quot;YYLmfY6IehjZMQ&quot;) = a49670c3c18b9e079b9cfaf51634f563dc8ae3070db2c4a8544305df1b60f007</span><br></pre></td></tr></table></figure>
+<p>查表法和彩虹表只有在所有密码都以相同方式进行哈希加密时才有效。如果两个用户密码相同，那么他们密码的哈希值也是相同的。我们可以通过<strong>随机化哈希</strong>来阻止这类攻击，于是当相同的密码被哈希两次之后，得到的值就不相同了。</p>
+<p>为了校验密码是否正确，我们需要<strong>储存盐值</strong>。通常和密码哈希值一起存放在账户数据库中，或者直接存为哈希字符串的一部分。</p>
+<p>盐值并不需要保密，由于随机化了哈希值，查表法、反向查表法和彩虹表都不再有效。攻击者无法确知盐值，于是就不能预先计算出一个查询表或者彩虹表。这样每个用户的密码都混入不同的盐值后再进行哈希，因此反向查表法也变得难以实施。</p>
+<p>盐值应该使用基于加密的伪随机数生成器（Cryptographically Secure Pseudo-Random Number Generator – CSPRNG）来生成。CSPRNG专门被设计成用于加密，它能提供高度随机和无法预测的随机数。</p>
+<p>对于每个用户的每个密码，<strong>盐值都应该是独一无二的</strong>。每当有新用户注册或者修改密码，都应该使用新的盐值进行加密。并且这个盐值也应该足够长，使得有足够多的盐值以供加密。一个好的标准的是：<strong>盐值至少和哈希函数的输出一样长；盐值应该被储存并和密码哈希一起储存在账户数据表中。</strong></p>
+<h3 id="慢哈希函数"><a href="#慢哈希函数" class="headerlink" title="慢哈希函数"></a>慢哈希函数</h3><p>加盐使攻击者无法采用特定的查询表和彩虹表快速破解大量哈希值，但是却不能阻止他们使用字典攻击或暴力攻击。高端的显卡（GPU）和定制的硬件可以每秒进行数十亿次哈希计算，因此这类攻击依然可以很高效。为了降低攻击者的效率，我们可以使用一种叫做<strong>密钥扩展的技术</strong>。</p>
+<p>这类算法使用一个安全因子或迭代次数作为参数，这个值决定了哈希函数会有多慢。对于桌面软件或者手机软件，获取参数最好的办法就是执行一个简短的性能基准测试，找到使哈希函数大约耗费0.5秒的值。这样，你的程序就可以尽可能保证安全，而又不影响到用户体验。</p>
+<p>如果你在一个Web程序中使用密钥扩展，记得你需要额外的资源处理大量认证请求，并且密钥扩展也使得网站更容易遭受拒绝服务攻击（DoS）。但我依然推荐使用密钥扩展，不过把迭代次数设定得低一点，你应该基于认证请求最高峰时的剩余硬件资源来计算迭代次数。要求用户每次登录时输入验证码可以消除拒绝服务的威胁。另外，一定要把你的系统设计为迭代次数可随时调整的。</p>
+<p>如果你担心计算量带来的负载，但又想在Web程序中使用密钥扩展，可以考虑在浏览器中用JavaScript完成。Stanford JavaScript Crypto Library里包含了PBKDF2的实现。迭代次数应该被设置到足够低，以适应速度较慢的客户端，比如移动设备。同时当客户端不支持JavaScript的时候，服务端应该接手计算。客户端的密钥扩展并不能免除服务端进行哈希加密的职责，你必须对客户端传来的哈希值再次进行哈希加密，就像对付一个普通密码一样。</p>
+<h3 id="BCrypt算法"><a href="#BCrypt算法" class="headerlink" title="BCrypt算法"></a>BCrypt算法</h3><p>BCrypt可以满足我们的需要。</p>
+<h3 id="参看"><a href="#参看" class="headerlink" title="参看"></a>参看</h3><p><a href="http://blog.jobbole.com/61872/" target="_blank" rel="noopener">加盐密码哈希：如何正确使用</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://wxcchdstar.github.io/2018/06/08/数据库/数据库密码加密/" data-id="cji5czbk20004rhybuh53xkdu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-数据库/高性能MySQL" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/07/数据库/高性能MySQL/" class="article-date">
@@ -139,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/" data-id="cji4iipci0000d2yb5v6yzcfa" class="article-share-link">Share</a>
+      <a data-url="https://wxcchdstar.github.io/2018/06/07/数据库/高性能MySQL/" data-id="cji5czbk60005rhybe7abuc8f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -236,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://wxcchdstar.github.io/2018/06/07/数据库/MySQL数据库军规/" data-id="cji4i3x0l00003ayb8lr56ndd" class="article-share-link">Share</a>
+      <a data-url="https://wxcchdstar.github.io/2018/06/07/数据库/MySQL数据库军规/" data-id="cji5czbjn0000rhyb1vlmo11o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -291,7 +354,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://wxcchdstar.github.io/2017/12/21/数据库/Mysql操作汇总/" data-id="cji4i3x0t00013aybwzeqi9g4" class="article-share-link">Share</a>
+      <a data-url="https://wxcchdstar.github.io/2017/12/21/数据库/Mysql操作汇总/" data-id="cji5czbjt0001rhybtoz0fffb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -353,6 +416,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/06/08/数据库/数据库密码加密/">数据库密码加密</a>
+          </li>
         
           <li>
             <a href="/2018/06/07/数据库/高性能MySQL/">《高性能MySQL》笔记（未完待续）</a>
